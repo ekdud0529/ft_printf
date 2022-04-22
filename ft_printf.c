@@ -12,7 +12,17 @@
 
 #include "ft_printf.h"
 
-int	ft_printf(const char * input)
+int	ft_printf(const char *format, ...)
 {
+	va_list	ap;
+	int		cnt;
 
+	cnt = 0;
+	va_start(ap, format);
+	while(format)
+	{
+
+	}
+	va_end(ap);
+	return (cnt);
 }
