@@ -15,21 +15,23 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
+	size_t	index;
 	int		cnt;
 
 	cnt = 0;
+	index = 0;
 	va_start(ap, format);
-	while(format[cnt])
+	while(format[index])
 	{
 		if (format[cnt] != '%')
 		{
-			cnt++;
+			index++;
 			// 출력
 			cnt++;
 		}
 		else
 		{
-			cnt += check_type((char)format[cnt]);
+			index += check_type((char)format[cnt]);
 		}
 	}
 	va_end(ap);
