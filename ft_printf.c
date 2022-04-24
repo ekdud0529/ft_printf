@@ -21,57 +21,41 @@ int	ft_printf(const char *format, ...)
 	cnt = 0;
 	index = 0;
 	va_start(ap, format);
-	while(format[index])
+	while (format[index])
 	{
-		if (format[cnt] != '%')
+		if (format[index] != '%')
 		{
 			index++;
-			// 출력
-			cnt++;
+			cnt += ft_putchar_cnt(format[index]);
 		}
 		else
 		{
-			index += check_type((char)format[cnt]);
+			index++;
+			cnt += check_type((char)format[index], &ap);
 		}
 	}
 	va_end(ap);
 	return (cnt);
 }
 
-int	check_type(char	conv)
+int	check_type(char conv, va_list *ap)
 {
-	if(conv == 'c' || conv == '%')
-	{
-		
-	}
-	else if(conv == 's')
-	{
+	if (conv == '%')
+		return (ft_putchar_cnt('%'));
+	if (conv == 'c')
+		return (ft_putchar_cnt(va_arg(*ap, int)));
+	else if (conv == 's')
+		return (ft_putstr_cnt(va_arg(*ap, char *)));
+	// else if (conv == 'p')
 
-	}
-	else if(conv == 'p')
-	{
-
-	}
-	else if(conv == 'd' || conv == 'i')
-	{
-
-	}
-	else if(conv == 'i')
-	{
-
-	}
-	else if(conv == 'u')
-	{
-
-	}
-	else if(conv == 'x')
-	{
-
-	}
-	else if(conv == 'X')
-	{
-
-	}
+	else if (conv == 'd' || conv == 'i')
+		return (ft_putnbr_cnt(va_arg(*ap, int)));
+	// else if (conv == 'u')
+	
+	else if (conv == 'x')
+		return (ft_puthex_cnt(va_arg(*ap, unsigned int), 'x'));
+	else if (conv == 'X')
+		return (ft_puthex_cnt(va_arg(*ap, unsigned int), 'X'));	
 	else
 		return (0);
 }
