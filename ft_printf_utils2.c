@@ -24,6 +24,8 @@ int	ft_puthex_cnt(unsigned int num, char x)
 	else if (x == 'x')
 		hex = "0123456789abcdef";
 	index = 0;
+	if (num == 0)
+		changed[index++] = '0';
 	while (num)
 	{
 		changed[index] = hex[num % 16];
@@ -46,6 +48,8 @@ int	ft_unsigned_cnt(unsigned int num)
 
 	cnt = 0;
 	index = 0;
+	if (num == 0)
+		changed[index++] = 0;
 	while (num)
 	{
 		changed[index] = num % 10;
@@ -65,18 +69,20 @@ int	ft_putp_cnt(unsigned long addr)
 	int		cnt;
 	int		index;
 	char	changed[20];
+	char	*hex;
 
+	hex = "0123456789abcdef";
 	if (!addr)
 	{
-		write(1, "(null)", 6);
+		write(1, "0", 1);
 		return (6);
 	}
 	cnt = 0;
 	index = 0;
 	while (addr)
 	{
-		changed[index] = addr % 10;
-		addr /= 10;
+		changed[index] = hex[addr % 16];
+		addr /= 16;
 		index++;
 	}
 	while (--index >= 0)

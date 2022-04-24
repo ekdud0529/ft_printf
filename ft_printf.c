@@ -25,7 +25,6 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[index] != '%')
 		{
-			index++;
 			cnt += ft_putchar_cnt(format[index]);
 		}
 		else
@@ -33,6 +32,7 @@ int	ft_printf(const char *format, ...)
 			index++;
 			cnt += check_type((char)format[index], &ap);
 		}
+		index++;
 	}
 	va_end(ap);
 	return (cnt);

@@ -25,7 +25,7 @@ int	ft_putstr_cnt(char *arg)
 
 	cnt = 0;
 	index = 0;
-	if (!arg[index])
+	if (!arg)
 	{
 		write(1, "(null)", 6);
 		return (6);
