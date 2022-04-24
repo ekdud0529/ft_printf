@@ -38,7 +38,7 @@ static int	ft_putstr_cnt(char *arg)
 	return (cnt);
 }
 
-int	ft_putnbr_cnt(int n)
+static int	ft_putnbr_cnt(int n)
 {
 	int			nums[10];
 	long long	num;
@@ -65,14 +65,37 @@ int	ft_putnbr_cnt(int n)
 	return (cnt);
 }
 
-int	ft_puthex_cnt(unsigned int num, char x)
+static int	ft_puthex_cnt(unsigned int num, char x)
 {
 	char	*hex;
+	char	changed[10];
+	int		index;
+	int		cnt;
 
 	if (x == 'X')
 		*hex = "0123456789ABCDEF";
 	else if(x == 'x')
 		*hex = "0123456789abcdef";
+	index = 0;
+	while (num)
+	{
+		changed[index] = hex[num % 16];
+		num /= 16;
+		index++;
+	}
+	cnt = 0;
+	while (--index)
+	{
+		cnt += ft_putchar_cnt(changed[index]);
+	}
+	return (cnt);
+}
 
+static int	ft_unsigned_cnt()
+{
+	int	cnt;
+
+	cnt = 0;
 	
+	return (cnt);
 }

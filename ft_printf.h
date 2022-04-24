@@ -17,5 +17,6 @@
 # include <unistd.h>
 
 int	ft_printf(const char * input, ...);
+int	check_type(char conv, va_list *ap);
 
 #endif
