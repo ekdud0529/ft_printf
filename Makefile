@@ -15,18 +15,22 @@ NAME = libftprint.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-AR = ar rcs
+AR = ar -rcs
 RM = rm -rf
 
 INCLUDES = ./ft_printf.h
 
-SRCS = ft_printf.c ft_printf_utils1.c ft_printf_utils2.c
+SRCS = \
+		ft_printf.c\
+		ft_printf_utils1.c\
+		ft_printf_utils2.c
+
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
 
 .c.o : $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ %<
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
