@@ -21,7 +21,7 @@ static int	ft_puthex_cnt(unsigned int num, char x)
 
 	if (x == 'X')
 		*hex = "0123456789ABCDEF";
-	else if(x == 'x')
+	else if (x == 'x')
 		*hex = "0123456789abcdef";
 	index = 0;
 	while (num)
@@ -65,7 +65,7 @@ static int	ft_putp_cnt(unsigned long addr)
 	int		cnt;
 	int		index;
 	char	changed[20];
-	
+
 	if (!addr)
 	{
 		write(1, "(null)", 6);

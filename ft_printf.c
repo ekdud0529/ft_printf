@@ -51,11 +51,11 @@ int	check_type(char conv, va_list *ap)
 	else if (conv == 'd' || conv == 'i')
 		return (ft_putnbr_cnt(va_arg(*ap, int)));
 	else if (conv == 'u')
-		return (ft_unsigned_cnt(va_arg(*ap, unsigned int)));	
+		return (ft_unsigned_cnt(va_arg(*ap, unsigned int)));
 	else if (conv == 'x')
 		return (ft_puthex_cnt(va_arg(*ap, unsigned int), 'x'));
 	else if (conv == 'X')
-		return (ft_puthex_cnt(va_arg(*ap, unsigned int), 'X'));	
+		return (ft_puthex_cnt(va_arg(*ap, unsigned int), 'X'));
 	else
 		return (0);
 }

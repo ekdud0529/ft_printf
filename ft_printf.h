@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char * input, ...);
+int	ft_printf(const char *format, ...);
 int	check_type(char conv, va_list *ap);
 
 #endif
