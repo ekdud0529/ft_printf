@@ -20,9 +20,9 @@ int	ft_puthex_cnt(unsigned int num, char x)
 	int		cnt;
 
 	if (x == 'X')
-		*hex = "0123456789ABCDEF";
+		hex = "0123456789ABCDEF";
 	else if (x == 'x')
-		*hex = "0123456789abcdef";
+		hex = "0123456789abcdef";
 	index = 0;
 	while (num)
 	{
