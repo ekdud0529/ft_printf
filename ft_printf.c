@@ -46,8 +46,8 @@ int	check_type(char conv, va_list *ap)
 		return (ft_putchar_cnt(va_arg(*ap, int)));
 	else if (conv == 's')
 		return (ft_putstr_cnt(va_arg(*ap, char *)));
-	// else if (conv == 'p')
-
+	else if (conv == 'p')
+		retur (ft_putp_cnt());
 	else if (conv == 'd' || conv == 'i')
 		return (ft_putnbr_cnt(va_arg(*ap, int)));
 	else if (conv == 'u')
