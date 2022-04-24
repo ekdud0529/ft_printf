@@ -31,7 +31,7 @@ static int	ft_puthex_cnt(unsigned int num, char x)
 		index++;
 	}
 	cnt = 0;
-	while (--index)
+	while (--index >= 0)
 	{
 		cnt += ft_putchar_cnt(changed[index]);
 	}
@@ -52,7 +52,7 @@ static int	ft_unsigned_cnt(unsigned int num)
 		num /= 10;
 		index++;
 	}
-	while (--index)
+	while (--index >= 0)
 	{
 		ft_putchar_cnt(changed[index] + '0');
 		cnt++;
@@ -79,7 +79,7 @@ static int	ft_putp_cnt(unsigned long addr)
 		addr /= 10;
 		index++;
 	}
-	while (--index)
+	while (--index >= 0)
 	{
 		ft_putchar_cnt(changed[index] + '0');
 		cnt++;

@@ -21,7 +21,6 @@ RM = rm -rf
 INCLUDES = ./ft_printf.h
 
 SRCS = ft_printf.c ft_printf_utils1.c ft_printf_utils2.c
-
 OBJS = $(SRCS:.c=.o)
 
 all : $(NAME)
