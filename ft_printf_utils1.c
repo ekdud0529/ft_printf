@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-static int	ft_putchar_cnt(char c)
+int	ft_putchar_cnt(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-static int	ft_putstr_cnt(char *arg)
+int	ft_putstr_cnt(char *arg)
 {
 	int	cnt;
 	int	index;
@@ -38,7 +38,7 @@ static int	ft_putstr_cnt(char *arg)
 	return (cnt);
 }
 
-static int	ft_putnbr_cnt(int n)
+int	ft_putnbr_cnt(int n)
 {
 	int			nums[10];
 	long long	num;

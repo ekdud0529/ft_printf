@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	ft_puthex_cnt(unsigned int num, char x)
+int	ft_puthex_cnt(unsigned int num, char x)
 {
 	char	*hex;
 	char	changed[11];
@@ -38,7 +38,7 @@ static int	ft_puthex_cnt(unsigned int num, char x)
 	return (cnt);
 }
 
-static int	ft_unsigned_cnt(unsigned int num)
+int	ft_unsigned_cnt(unsigned int num)
 {
 	int		cnt;
 	int		index;
@@ -60,7 +60,7 @@ static int	ft_unsigned_cnt(unsigned int num)
 	return (cnt);
 }
 
-static int	ft_putp_cnt(unsigned long addr)
+int	ft_putp_cnt(unsigned long addr)
 {
 	int		cnt;
 	int		index;
