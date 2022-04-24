@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = libftprint.a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
