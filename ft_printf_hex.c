@@ -60,7 +60,29 @@ static int	ft_unsigned_cnt(unsigned int num)
 	return (cnt);
 }
 
-static int	ft_putp_cnt()
+static int	ft_putp_cnt(unsigned long addr)
 {
+	int		cnt;
+	int		index;
+	char	changed[20];
 	
+	if (!addr)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
+	cnt = 0;
+	index = 0;
+	while (addr)
+	{
+		changed[index] = addr % 10;
+		addr /= 10;
+		index++;
+	}
+	while (--index)
+	{
+		ft_putchar_cnt(changed[index] + '0');
+		cnt++;
+	}
+	return (cnt);
 }
