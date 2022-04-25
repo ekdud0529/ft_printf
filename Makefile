@@ -18,8 +18,6 @@ CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 RM = rm -rf
 
-INCLUDES = ./ft_printf/ft_printf.h
-
 PRINTF_DIR = ./ft_printf
 LIBFT_DIR = ./libft
 
@@ -41,9 +39,11 @@ $(NAME) : $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean :
+	$(MAKE) -C $(LIBFT_DIR) clean
 	$(RM) $(OBJS)
 
 fclean : clean
+	$(MAKE) -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME)
 
 re : fclean all
