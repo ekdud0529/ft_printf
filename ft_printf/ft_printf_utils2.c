@@ -72,23 +72,23 @@ int	ft_putp_cnt(unsigned long addr)
 	char	*hex;
 
 	hex = "0123456789abcdef";
+	write(1, "0x", 2);
 	if (!addr)
 	{
 		write(1, "0", 1);
-		return (6);
+		return (3);
 	}
 	cnt = 0;
 	index = 0;
 	while (addr)
 	{
-		changed[index] = hex[addr % 16];
+		changed[index++] = hex[addr % 16];
 		addr /= 16;
-		index++;
 	}
 	while (--index >= 0)
 	{
-		ft_putchar_cnt(changed[index] + '0');
+		ft_putchar_cnt(changed[index]);
 		cnt++;
 	}
-	return (cnt);
+	return (cnt + 2);
 }
