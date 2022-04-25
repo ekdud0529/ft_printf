@@ -31,7 +31,7 @@ OBJS = $(addprefix $(PRINTF_DIR)/,$(SRCS:.c=.o))
 all : $(NAME)
 
 .c.o : $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	$(CC) $(CFLAGS) -c -o $@ $< -I./$(PRINTF_DIR)
 
 $(NAME) : $(OBJS)
 	$(MAKE) bonus -C $(LIBFT_DIR)
